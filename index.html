@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandry Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --navy: #0E3A45;
+    --turquoise: #2FB6A6;
+    --coral: #E8794A;
+    --limestone: #F1E9D8;
+    --ink: #16211F;
+    --sand-line: #D9CBAA;
+    --surface: #FFFFFF;
+    --ink-soft: color-mix(in srgb, var(--ink) 68%, transparent);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy: #17323C;
+      --turquoise: #3FCBB9;
+      --coral: #F08B5E;
+      --limestone: #10171A;
+      --ink: #EDE6D8;
+      --sand-line: #2B3634;
+      --surface: #18211F;
+      --ink-soft: color-mix(in srgb, var(--ink) 68%, transparent);
+    }
+  }
+  :root[data-theme="dark"] {
+    --navy: #17323C;
+    --turquoise: #3FCBB9;
+    --coral: #F08B5E;
+    --limestone: #10171A;
+    --ink: #EDE6D8;
+    --sand-line: #2B3634;
+    --surface: #18211F;
+    --ink-soft: color-mix(in srgb, var(--ink) 68%, transparent);
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--limestone);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; }
+  a { color: var(--turquoise); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; border-radius: 2px; }
+
+  .top {
+    background: var(--navy);
+    color: var(--limestone);
+    padding: 56px 24px 64px;
+  }
+  .top-inner { max-width: 900px; margin: 0 auto; }
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--turquoise) 85%, white 15%);
+    margin-bottom: 22px;
+  }
+  .mark svg { flex-shrink: 0; }
+  .top h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    color: #FBF6EC;
+  }
+  .top p.lede {
+    font-size: 17px;
+    max-width: 54ch;
+    color: color-mix(in srgb, var(--limestone) 88%, transparent);
+    margin: 0 0 22px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--limestone) 72%, transparent);
+  }
+  .meta b { color: var(--limestone); font-weight: 500; }
+
+  .layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 28px;
+    padding-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  @media (max-width: 760px) {
+    nav.toc {
+      position: static;
+      padding: 20px 0 8px;
+      margin-top: -20px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      border-bottom: 1px solid var(--sand-line);
+    }
+  }
+  nav.toc a {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 6px 0;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  @media (max-width: 760px) {
+    nav.toc a { border-left: none; padding-left: 0; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+  }
+  nav.toc a:hover { color: var(--ink); }
+  nav.toc a.active {
+    color: var(--navy);
+    font-weight: 600;
+    border-left-color: var(--turquoise);
+  }
+  @media (max-width: 760px) {
+    nav.toc a.active { border-left-color: transparent; border-bottom-color: var(--turquoise); }
+  }
+  main { padding-top: 44px; min-width: 0; }
+
+  .callout {
+    background: color-mix(in srgb, var(--turquoise) 12%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--turquoise) 35%, var(--sand-line));
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 14.5px;
+    color: var(--ink);
+    margin: 0 0 40px;
+    line-height: 1.55;
+  }
+  .callout strong { color: var(--navy); }
+
+  section { margin-bottom: 44px; scroll-margin-top: 24px; }
+  section h2 {
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-wrap: balance;
+  }
+  section h2 .num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--coral);
+  }
+  section > p.dek {
+    margin: 0 0 18px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  section p { margin: 0 0 14px; max-width: 64ch; }
+  section ul { margin: 0 0 14px; padding-left: 22px; max-width: 62ch; }
+  section li { margin-bottom: 8px; }
+  section li::marker { color: var(--turquoise); }
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    margin: 22px 0 8px;
+  }
+
+  .datatable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 18px;
+    font-size: 13.5px;
+  }
+  .datatable th, .datatable td {
+    text-align: left;
+    padding: 10px 14px 10px 0;
+    border-bottom: 1px solid var(--sand-line);
+    vertical-align: top;
+  }
+  .datatable th {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .datatable td.who { color: var(--navy); font-weight: 600; white-space: nowrap; }
+  .scrollwrap { overflow-x: auto; }
+
+  .not-collected {
+    border-left: 3px solid var(--coral);
+    padding: 4px 0 4px 16px;
+    margin: 18px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .not-collected strong { color: var(--ink); }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  footer a { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <div class="mark">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      Mandry
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="lede">What Mandry collects when you plan a trip, why we collect it, and how to see or remove it.</p>
+    <div class="meta">
+      <span><b>Effective</b> September 1, 2026</span>
+      <span><b>Applies to</b> the Mandry app and account</span>
+      <span><b>Contact</b> mandryapps@gmail.com</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc">
+    <a href="#collect">What we collect</a>
+    <a href="#use">How we use it</a>
+    <a href="#share">Who we share it with</a>
+    <a href="#retain">How long we keep it</a>
+    <a href="#control">Your controls</a>
+    <a href="#security">Security</a>
+    <a href="#children">Children</a>
+    <a href="#changes">Changes</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <div class="callout">
+      <strong>In short:</strong> Mandry stores what you give it — your login, the places you save and suggest, the photos you attach — to run the app and its moderation queue. It does not track your location in the background, does not run ad or analytics trackers, and never sees your card number: purchases go through Google Play's own billing.
+    </div>
+
+    <section id="collect">
+      <h2><span class="num">01</span> What we collect</h2>
+      <p class="dek">Everything below is information you give us directly, by using the app.</p>
+
+      <h3>Account</h3>
+      <p>Your email address, and either a password (stored by our database provider, Supabase, using standard salted hashing — we never see it in plain text) or, if you choose "Continue with Google," the name, email, and profile photo Google shares with us for sign-in.</p>
+
+      <h3>Profile</h3>
+      <p>Nickname, avatar photo, your chosen app language and light/dark/pink/gradient theme, and — if you set it — your home country, used only to show a "you're travelling" prompt.</p>
+
+      <h3>Content you create</h3>
+      <ul>
+        <li>Places you save, mark as visited, or write a comment or recommendation on</li>
+        <li>New places you suggest, including any photos and the Google Maps link you attach</li>
+        <li>Photos you contribute to existing places</li>
+        <li>Messages you send through the feedback form</li>
+      </ul>
+
+      <h3>Purchases</h3>
+      <p>When you buy coins, Google Play Billing (via RevenueCat) tells us which pack you bought and confirms payment — we record that as a coin transaction. We never receive or store your card details; Google and RevenueCat handle the transaction itself.</p>
+
+      <div class="not-collected">
+        <strong>What we don't currently collect:</strong> precise or background location, and push-notification tokens. Both are built into the app's code but switched off while Mandry is in this phase of development. If either is turned on in a future update, we'll ask for your permission first and update this policy.
+      </div>
+    </section>
+
+    <section id="use">
+      <h2><span class="num">02</span> How we use it</h2>
+      <ul>
+        <li>Run your account and sync your saved places, coins, and progress across devices</li>
+        <li>Review place and photo suggestions before they go live — see "Who we share it with" below</li>
+        <li>Send account emails: sign-in links, password resets, purchase confirmations</li>
+        <li>Reply to feedback you send us</li>
+      </ul>
+      <p>We don't use your data for advertising, and we don't sell it.</p>
+    </section>
+
+    <section id="share">
+      <h2><span class="num">03</span> Who we share it with</h2>
+      <p class="dek">Only the services that keep Mandry running — no data brokers, no ad networks.</p>
+      <div class="scrollwrap">
+        <table class="datatable">
+          <thead><tr><th>Service</th><th>What it handles</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="who">Supabase</td><td>Account data, saved places, photos, all app content</td><td>Our database, authentication, and file storage provider</td></tr>
+            <tr><td class="who">Google</td><td>Email and profile, if you sign in with Google; purchase billing</td><td>Sign-in and Google Play payments</td></tr>
+            <tr><td class="who">RevenueCat</td><td>Which coin pack you bought</td><td>Connects Google Play purchases to your coin balance</td></tr>
+            <tr><td class="who">Telegram</td><td>New place/photo suggestions and feedback messages, with your email and nickname</td><td>Sent to our own private moderation channel only — never made public</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="retain">
+      <h2><span class="num">04</span> How long we keep it</h2>
+      <p>We keep your account data for as long as your account exists. If you delete your account (see below), it's removed along with almost everything tied to it.</p>
+      <p>One exception: if a place you suggested was already approved and published, it stays in the app the way a published wiki edit would — it's no longer linked to your account or name once you delete it.</p>
+    </section>
+
+    <section id="control">
+      <h2><span class="num">05</span> Your controls</h2>
+      <p>From <strong>Profile → Delete account</strong> inside the app, you can permanently delete your account. That immediately removes your profile, saved places, reviews and comments, place and photo suggestions, feedback history, and coin transaction history — in one step, no support ticket needed.</p>
+      <p>You can also change your nickname, avatar, language, and theme at any time from the same Profile screen.</p>
+    </section>
+
+    <section id="security">
+      <h2><span class="num">06</span> Security</h2>
+      <p>Your data lives on Supabase's infrastructure with row-level access controls, meaning the app itself only ever asks for your own data, not anyone else's. Passwords are hashed, never stored as plain text, and all traffic between the app and our servers is encrypted.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="num">07</span> Children</h2>
+      <p>Mandry isn't directed at children, and we don't knowingly collect information from anyone under 13. If you believe a child has created an account, contact us and we'll remove it.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="num">08</span> Changes to this policy</h2>
+      <p>If we change what we collect or how we use it, we'll update the date at the top of this page. Significant changes will also be noted in the app.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">09</span> Contact</h2>
+      <p>Questions about this policy or your data — write to <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  Mandry — a travel companion app. This page describes the current build; see the "Changes" section above for how updates are announced.
+</footer>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var idx = sections.indexOf(entry.target);
+        if (idx === -1) return;
+        if (entry.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('active'); });
+          links[idx].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function (s) { if (s) io.observe(s); });
+  })();
+</script>
+</body>
+</html>
