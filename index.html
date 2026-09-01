@@ -8,11 +8,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
+  /* Страница намеренно ОДНОТЕМНАЯ — всегда светлая/белая, не подстраивается
+     под системную тёмную тему устройства (по просьбе пользователя: "оба
+     дока на белом фоне нужно"). Юридический документ — предсказуемость и
+     читаемость (в т.ч. при печати) важнее следования теме приложения. */
   :root {
     --navy: #0E3A45;
     --turquoise: #2FB6A6;
     --coral: #E8794A;
-    --limestone: #F1E9D8;
+    --limestone: #FFFFFF;
     --ink: #16211F;
     --sand-line: #D9CBAA;
     --surface: #FFFFFF;
@@ -21,31 +25,9 @@
     --font-body: 'Inter', -apple-system, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --navy: #17323C;
-      --turquoise: #3FCBB9;
-      --coral: #F08B5E;
-      --limestone: #10171A;
-      --ink: #EDE6D8;
-      --sand-line: #2B3634;
-      --surface: #18211F;
-      --ink-soft: color-mix(in srgb, var(--ink) 68%, transparent);
-    }
-  }
-  :root[data-theme="dark"] {
-    --navy: #17323C;
-    --turquoise: #3FCBB9;
-    --coral: #F08B5E;
-    --limestone: #10171A;
-    --ink: #EDE6D8;
-    --sand-line: #2B3634;
-    --surface: #18211F;
-    --ink-soft: color-mix(in srgb, var(--ink) 68%, transparent);
-  }
 
   * { box-sizing: border-box; }
-  html { color-scheme: light dark; }
+  html { color-scheme: light; }
   body {
     margin: 0;
     background: var(--limestone);
