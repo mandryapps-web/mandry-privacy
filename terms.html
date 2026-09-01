@@ -332,7 +332,10 @@
       if (links[idx]) links[idx].classList.add('active');
     }
 
+    var suppressUntil = 0;
+
     function updateActive() {
+      if (Date.now() < suppressUntil) return;
       var scrollPos = window.scrollY + 140;
       var activeIdx = 0;
       for (var i = 0; i < sections.length; i++) {
@@ -340,6 +343,17 @@
       }
       setActive(activeIdx);
     }
+
+    // Клик по пункту меню однозначно говорит, куда идём — подсвечиваем его
+    // сразу, не дожидаясь вычислений по scroll-позиции (те могут не успеть
+    // докрутить секцию строго до нужной границы на некоторых размерах
+    // окна, особенно для коротких последних секций в конце страницы).
+    links.forEach(function (link, idx) {
+      link.addEventListener('click', function () {
+        setActive(idx);
+        suppressUntil = Date.now() + 700;
+      });
+    });
 
     var ticking = false;
     window.addEventListener('scroll', function () {
