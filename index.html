@@ -375,21 +375,50 @@
 </footer>
 
 <script>
+  // Было на IntersectionObserver с rootMargin — секции ближе к концу
+  // страницы (Security/Children/Changes/Contact) физически не успевали
+  // пройти через зону детекции, потому что под ними уже не было места для
+  // скролла: подсветка "залипала" на более раннем пункте (пользователь
+  // заметил именно это). Проще и надёжнее — просто сравнивать позицию
+  // скролла с offsetTop каждой секции напрямую, плюс отдельно проверять
+  // "докрутили до самого низа страницы" — тогда последний пункт (Contact)
+  // подсвечивается гарантированно, а не по случайному совпадению высот.
   (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
-    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
-    if (!('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var idx = sections.indexOf(entry.target);
-        if (idx === -1) return;
-        if (entry.isIntersecting) {
-          links.forEach(function (l) { l.classList.remove('active'); });
-          links[idx].classList.add('active');
-        }
+    var sections = links
+      .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+      .filter(Boolean);
+
+    function setActive(idx) {
+      links.forEach(function (l) { l.classList.remove('active'); });
+      if (links[idx]) links[idx].classList.add('active');
+    }
+
+    function updateActive() {
+      var scrollPos = window.scrollY + 140; // тот же отступ, что раньше был у верхней границы rootMargin
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atBottom) {
+        setActive(sections.length - 1);
+        return;
+      }
+      var activeIdx = 0;
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].offsetTop <= scrollPos) activeIdx = i;
+      }
+      setActive(activeIdx);
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        updateActive();
+        ticking = false;
       });
-    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
-    sections.forEach(function (s) { if (s) io.observe(s); });
+    }, { passive: true });
+    window.addEventListener('resize', updateActive);
+    updateActive();
   })();
 </script>
 </body>
