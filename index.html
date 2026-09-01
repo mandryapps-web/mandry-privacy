@@ -367,6 +367,15 @@
       <h2><span class="num">09</span> Contact</h2>
       <p>Questions about this policy or your data — write to <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>.</p>
     </section>
+
+    <!-- Секции Security/Children/Changes/Contact — короткие и идут подряд в
+         самом конце страницы, без этого спейсера им физически не хватает
+         места для скролла, чтобы каждая по очереди доехала до верха экрана
+         (упирались в конец документа раньше) — оттуда и "клик по Security
+         прыгает на Contact", что заметил пользователь: браузер просто не
+         может прокрутить дальше максимума, и все четыре секции утрамбовывались
+         в один и тот же нижний экран. -->
+    <div style="height: 45vh;" aria-hidden="true"></div>
   </main>
 </div>
 
@@ -378,11 +387,16 @@
   // Было на IntersectionObserver с rootMargin — секции ближе к концу
   // страницы (Security/Children/Changes/Contact) физически не успевали
   // пройти через зону детекции, потому что под ними уже не было места для
-  // скролла: подсветка "залипала" на более раннем пункте (пользователь
-  // заметил именно это). Проще и надёжнее — просто сравнивать позицию
-  // скролла с offsetTop каждой секции напрямую, плюс отдельно проверять
-  // "докрутили до самого низа страницы" — тогда последний пункт (Contact)
-  // подсвечивается гарантированно, а не по случайному совпадению высот.
+  // скролла: подсветка "залипала" на более раннем пункте. Первая попытка
+  // фикса (offsetTop + принудительное "докрутили до низа → подсветить
+  // Contact") сделала только хуже — на коротких последних секциях без
+  // места под ними эта проверка срабатывала СРАЗУ при клике на любую из
+  // них (Security/Children/Changes), у пользователя "клик по Security
+  // прыгает на Contact". Настоящая причина была не в логике подсветки, а в
+  // том, что этим секциям физически некуда было доскроллить по отдельности
+  // — решено спейсером в разметке (див высотой 45vh перед закрытием
+  // </main>), теперь просто сравниваем offsetTop без спецкейса на "низ
+  // страницы" — он больше не нужен.
   (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
     var sections = links
@@ -396,11 +410,6 @@
 
     function updateActive() {
       var scrollPos = window.scrollY + 140; // тот же отступ, что раньше был у верхней границы rootMargin
-      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-      if (atBottom) {
-        setActive(sections.length - 1);
-        return;
-      }
       var activeIdx = 0;
       for (var i = 0; i < sections.length; i++) {
         if (sections[i].offsetTop <= scrollPos) activeIdx = i;
