@@ -241,7 +241,7 @@
     <h1>Privacy Policy</h1>
     <p class="lede">What Mandry collects when you plan a trip, why we collect it, and how to see or remove it.</p>
     <div class="meta">
-      <span><b>Effective</b> September 1, 2026</span>
+      <span><b>Effective</b> November 22, 2026</span>
       <span><b>Applies to</b> the Mandry app and account</span>
       <span><b>Contact</b> mandryapps@gmail.com</span>
       <span><a href="terms.html">Terms of Service →</a></span>
@@ -264,12 +264,12 @@
 
   <main>
     <div class="callout">
-      <strong>In short:</strong> Mandry stores what you give it — your login, the places you save and suggest, the photos you attach — to run the app and its moderation queue. It does not track your location in the background, does not run ad or analytics trackers, and never sees your card number: purchases go through Google Play's own billing.
+      <strong>In short:</strong> Mandry stores what you give it — your login, the places you save and suggest, the photos you attach — to run the app and its moderation queue. It does not track your location in the background and runs no ad trackers. Usage analytics (Google Analytics for Firebase) is optional and collected only if you allow it; crash and error reports (Firebase Crashlytics and Sentry) help us keep the app stable. Mandry never sees your card number: purchases go through Google Play's own billing.
     </div>
 
     <section id="collect">
       <h2><span class="num">01</span> What we collect</h2>
-      <p class="dek">Everything below is information you give us directly, by using the app.</p>
+      <p class="dek">Some of this you give us directly; some is collected automatically while the app runs.</p>
 
       <h3>Account</h3>
       <p>Your email address, and either a password (stored by our database provider, Supabase, using standard salted hashing — we never see it in plain text) or, if you choose "Continue with Google," the name, email, and profile photo Google shares with us for sign-in.</p>
@@ -288,8 +288,17 @@
       <h3>Purchases</h3>
       <p>When you buy coins, Google Play Billing (via RevenueCat) tells us which pack you bought and confirms payment — we record that as a coin transaction. We never receive or store your card details; Google and RevenueCat handle the transaction itself.</p>
 
+      <h3>Notifications</h3>
+      <p>If you allow notifications in Android's permission prompt, a push token (Firebase Cloud Messaging, Google) identifies your device so we can tell you when a place, photo or feedback message you sent has been reviewed. When you sign out, the app asks our server to remove the token for this device; if the device is offline or the request fails, the app retries later, but we can't guarantee when the token will be removed. Deleting your account removes the tokens linked to it from our database. If you don't allow notifications, we don't store a push token for your device.</p>
+
+      <h3>Collected automatically</h3>
+      <p><strong>Usage analytics (Google Analytics for Firebase, Google) — optional.</strong> Starting with Android version 0.1.26 of Mandry, analytics is switched off until you press “Allow” in the dialog shown after you sign in. If you allow it, we collect which screens you open (recorded as in-app page names, which can include a trip, expense or place number), app opens, app version, device model, Android version and language, and an app-instance identifier stored on your device. Google Analytics also derives your approximate location (country, region and city) from your IP address. While analytics is allowed we attach your account's internal ID to these events; we don't send your email or name. Declining does not limit any feature, and you can change your choice at any time in Profile → Analytics &amp; privacy. In earlier app versions analytics was switched on for everyone and could not be switched off.</p>
+      <p><strong>Crash reports (Firebase Crashlytics, Google).</strong> Device model, Android version, app version, the state of the device at the time of a crash (for example free memory), technical details of the error, and installation identifiers set by the Firebase libraries; once you are signed in, your account's internal ID is attached. Names of recently visited screens are included only if you allowed analytics.</p>
+      <p><strong>Error reports (Sentry).</strong> Technical details of errors inside the app (error text, the sequence of technical steps that led to it, network call endpoints and status codes). Before these leave your device we remove emails, tokens and other identifiers from the text. Sentry also assigns each installation a random technical identifier, records app sessions and abnormal terminations, and, once you are signed in, receives your account's internal ID. Sentry stores data in the European Union, and we have turned on its setting that prevents storing IP addresses.</p>
+      <p>Crash and error reports are not covered by the analytics choice. If you have questions about them, email us at the address in the Contact section.</p>
+
       <div class="not-collected">
-        <strong>What we don't currently collect:</strong> precise or background location, and push-notification tokens. Both are built into the app's code but switched off while Mandry is in this phase of development. If either is turned on in a future update, we'll ask for your permission first and update this policy.
+        <strong>What we don't collect:</strong> precise or background location (Analytics derives only an approximate location from your IP address, see above), contacts, microphone, your device's advertising ID, or your card details.
       </div>
     </section>
 
@@ -300,19 +309,24 @@
         <li>Review place and photo suggestions before they go live — see "Who we share it with" below</li>
         <li>Send account emails: sign-in links, password resets, purchase confirmations</li>
         <li>Reply to feedback you send us</li>
+        <li>If you allow notifications, tell you when a place, photo or feedback message you sent has been reviewed</li>
+        <li>Find and fix errors and keep the app stable (crash and error reports)</li>
+        <li>If you allow it, understand which screens are used so we can improve them (usage analytics)</li>
       </ul>
       <p>We don't use your data for advertising, and we don't sell it.</p>
     </section>
 
     <section id="share">
       <h2><span class="num">03</span> Who we share it with</h2>
-      <p class="dek">Only the services that keep Mandry running — no data brokers, no ad networks.</p>
+      <p class="dek">The services Mandry uses — no data brokers, no ad networks.</p>
       <div class="scrollwrap">
         <table class="datatable">
           <thead><tr><th>Service</th><th>What it handles</th><th>Why</th></tr></thead>
           <tbody>
             <tr><td class="who">Supabase</td><td>Account data, saved places, photos, all app content</td><td>Our database, authentication, and file storage provider</td></tr>
             <tr><td class="who">Google</td><td>Email and profile, if you sign in with Google; purchase billing</td><td>Sign-in and Google Play payments</td></tr>
+            <tr><td class="who">Google (Google Analytics for Firebase, Crashlytics, Cloud Messaging)</td><td>Analytics events and screen names (only if you allow analytics), approximate location from your IP address, device and app details, crash reports, push tokens (only if you allow notifications), app-instance and installation identifiers, your account ID</td><td>Usage insight (only if you allow it), app stability and delivering notifications. For Google Analytics we have accepted Google's data processing terms; in its data-sharing settings we have turned on benchmarking, technical support and account specialists and left sharing with other Google products and services off</td></tr>
+            <tr><td class="who">Sentry</td><td>Error reports with technical details and your account ID</td><td>Finding and fixing errors (our Sentry project stores data in the European Union)</td></tr>
             <tr><td class="who">RevenueCat</td><td>Which coin pack you bought</td><td>Connects Google Play purchases to your coin balance</td></tr>
             <tr><td class="who">Telegram</td><td>New place/photo suggestions and feedback messages, with your email and nickname</td><td>Sent to our own private moderation channel only — never made public</td></tr>
           </tbody>
@@ -324,12 +338,14 @@
       <h2><span class="num">04</span> How long we keep it</h2>
       <p>We keep your account data for as long as your account exists. If you delete your account (see below), it's removed along with almost everything tied to it.</p>
       <p>One exception: if a place you suggested was already approved and published, it stays in the app the way a published wiki edit would — it's no longer linked to your account or name once you delete it.</p>
+      <p><strong>Analytics and diagnostics.</strong> Google Analytics events are kept for 2 months and user-level data (including identifiers) for 14 months, renewed while the user stays active (our retention settings). According to information published by Google, Crashlytics reports are kept for a limited period of up to about 90 days; this is the provider's information, not a guarantee from us. Sentry error reports are available to us for 30 days on our current plan. We cannot guarantee when data is physically removed from these providers' systems. This data is not deleted automatically when you delete your account or withdraw your analytics choice; it stays until these periods end. Your analytics choice (allowed or declined) is stored only on your device, separately for each account; it is excluded from Android's automatic backup and is removed when you delete your account in the app or uninstall the app.</p>
     </section>
 
     <section id="control">
       <h2><span class="num">05</span> Your controls</h2>
       <p>From <strong>Profile → Delete account</strong> inside the app, you can permanently delete your account. That immediately removes your profile, saved places, reviews and comments, place and photo suggestions, feedback history, and coin transaction history — in one step, no support ticket needed.</p>
       <p>You can also change your nickname, avatar, language, and theme at any time from the same Profile screen.</p>
+      <p><strong>Analytics choice.</strong> Starting with Android version 0.1.26 of Mandry, you can allow or decline analytics, and change your mind, in <strong>Profile → Analytics &amp; privacy</strong>. Withdrawing consent switches analytics off on your device and resets the analytics data stored there. It does not delete events that Google has already received; they stay until the retention periods above end. Earlier versions have no such switch. This choice does not cover crash and error reports. If you have a question or request about your personal data, including analytics collected earlier, you can email us at the address in the Contact section; we will review it, but we cannot promise that data held by Google or Sentry will be deleted before the retention periods above end. You can turn notifications off at any time in Android's settings.</p>
       <p><strong>Don't have the app installed, or can't sign in?</strong> Email <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a> from the address on your account and ask us to delete it. We'll remove the same data listed above within 30 days and confirm by email once it's done.</p>
     </section>
 
