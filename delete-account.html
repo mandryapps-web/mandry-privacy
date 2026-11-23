@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete your Mandry account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  /* Страница намеренно ОДНОТЕМНАЯ — всегда светлая/белая, не подстраивается
+     под системную тёмную тему устройства (по просьбе пользователя: "оба
+     дока на белом фоне нужно"). Юридический документ — предсказуемость и
+     читаемость (в т.ч. при печати) важнее следования теме приложения. */
+  :root {
+    --navy: #0E3A45;
+    --turquoise: #2FB6A6;
+    --coral: #E8794A;
+    --limestone: #FFFFFF;
+    --ink: #16211F;
+    --sand-line: #D9CBAA;
+    --surface: #FFFFFF;
+    --ink-soft: color-mix(in srgb, var(--ink) 68%, transparent);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body {
+    margin: 0;
+    background: var(--limestone);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; }
+  a { color: var(--turquoise); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; border-radius: 2px; }
+
+  .top {
+    background: var(--navy);
+    color: var(--limestone);
+    padding: 56px 24px 64px;
+  }
+  .top-inner { max-width: 900px; margin: 0 auto; }
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--turquoise) 85%, white 15%);
+    margin-bottom: 22px;
+  }
+  .mark svg { flex-shrink: 0; }
+  .top h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    color: #FBF6EC;
+  }
+  .top p.lede {
+    font-size: 17px;
+    max-width: 54ch;
+    color: color-mix(in srgb, var(--limestone) 88%, transparent);
+    margin: 0 0 22px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--limestone) 72%, transparent);
+  }
+  .meta b { color: var(--limestone); font-weight: 500; }
+  .meta a { color: color-mix(in srgb, var(--turquoise) 85%, white 15%); }
+
+  .layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 28px;
+    padding-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  @media (max-width: 760px) {
+    nav.toc {
+      position: static;
+      padding: 20px 0 8px;
+      margin-top: -20px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      border-bottom: 1px solid var(--sand-line);
+    }
+  }
+  nav.toc a {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 6px 0;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  @media (max-width: 760px) {
+    nav.toc a { border-left: none; padding-left: 0; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+  }
+  nav.toc a:hover { color: var(--ink); }
+  nav.toc a.active {
+    color: var(--navy);
+    font-weight: 600;
+    border-left-color: var(--turquoise);
+  }
+  @media (max-width: 760px) {
+    nav.toc a.active { border-left-color: transparent; border-bottom-color: var(--turquoise); }
+  }
+  main { padding-top: 44px; min-width: 0; }
+
+  .callout {
+    background: color-mix(in srgb, var(--turquoise) 12%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--turquoise) 35%, var(--sand-line));
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 14.5px;
+    color: var(--ink);
+    margin: 0 0 40px;
+    line-height: 1.55;
+  }
+  .callout strong { color: var(--navy); }
+
+  section { margin-bottom: 44px; scroll-margin-top: 24px; }
+  section h2 {
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-wrap: balance;
+  }
+  section h2 .num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--coral);
+  }
+  section > p.dek {
+    margin: 0 0 18px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  section p { margin: 0 0 14px; max-width: 64ch; }
+  section ul, section ol { margin: 0 0 14px; padding-left: 22px; max-width: 62ch; }
+  section li { margin-bottom: 8px; }
+  section li::marker { color: var(--turquoise); }
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    margin: 22px 0 8px;
+  }
+
+  .not-collected {
+    border-left: 3px solid var(--coral);
+    padding: 4px 0 4px 16px;
+    margin: 18px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .not-collected strong { color: var(--ink); }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  footer a { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <div class="mark">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      Mandry
+    </div>
+    <h1>Delete your Mandry account</h1>
+    <p class="lede">How to delete your MandryApp account and data — in the app, or by email if you no longer have the app.</p>
+    <div class="meta">
+      <span><b>Effective</b> November 23, 2026</span>
+      <span><b>Applies to</b> the Mandry app and account</span>
+      <span><b>Contact</b> mandryapps@gmail.com</span>
+      <span><a href="index.html">Privacy Policy →</a></span>
+      <span><a href="terms.html">Terms of Service →</a></span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc">
+    <a href="#in-app">Delete in the app</a>
+    <a href="#by-email">Delete by email</a>
+    <a href="#deleted">What is deleted</a>
+    <a href="#stays">What stays</a>
+    <a href="#coins">Coins</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <div class="callout">
+      <strong>In short:</strong> You can delete your MandryApp account yourself in the app (Profile → Delete account). If you don't have the app or can't sign in, email us from your account's address and we'll handle the request within 30 days. Approved photos and places stay in the shared catalog without your name, and some copies kept by other services remain for a while — the details are below.
+    </div>
+
+    <section id="in-app">
+      <h2><span class="num">01</span> Delete in the app</h2>
+      <ol>
+        <li>Open Mandry and sign in.</li>
+        <li>Go to <strong>Profile</strong> and choose <strong>Delete account</strong>.</li>
+        <li>Follow the on-screen instructions and confirm the deletion.</li>
+      </ol>
+      <p>Deletion starts immediately and can't be undone. If an error appears, check your connection and try again, or use the email route below.</p>
+    </section>
+
+    <section id="by-email">
+      <h2><span class="num">02</span> Delete by email — without the app</h2>
+      <p>If the app isn't installed, or you can't sign in, you can ask us to delete your account without opening the app:</p>
+      <ol>
+        <li>Email <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a> <strong>from the address linked to your Mandry account</strong>.</li>
+        <li>Use the subject "Delete my Mandry account" and, if you can, mention the nickname you used.</li>
+      </ol>
+      <p>We'll remove the data described below (subject to the exceptions listed under "What stays") within 30 days and confirm by email once it's done.</p>
+      <h3>Confirming it's your account</h3>
+      <p>If your request comes from an address that isn't linked to the account, or we aren't sure it comes from the account holder, we may ask you for additional confirmation of ownership — for example to write to us from the account address, or to confirm details of the account. We will never ask for your password. If we can't confirm ownership, we may not be able to delete the account.</p>
+    </section>
+
+    <section id="deleted">
+      <h2><span class="num">03</span> What is deleted</h2>
+      <p>Deleting your account removes:</p>
+      <ul>
+        <li>your profile, including your avatar image, and your sign-in account (your email and login)</li>
+        <li>your saved places, reviews and comments</li>
+        <li>your trip plans</li>
+        <li>place and photo suggestions that were not approved</li>
+        <li>your feedback history</li>
+        <li>your coin balance and transaction history</li>
+        <li>the push-notification tokens linked to your account</li>
+      </ul>
+      <p>Your analytics choice, which is stored only on your device, is removed when you delete your account in the app. The app removes your avatar image file from storage when you delete your account; if that step fails, email us and we'll remove it. The Privacy Policy describes all of this in more detail.</p>
+    </section>
+
+    <section id="stays">
+      <h2><span class="num">04</span> What stays</h2>
+      <p>Some things are not removed, or are removed later:</p>
+      <ul>
+        <li><strong>Approved places and photos</strong> you contributed stay in Mandry's shared catalog. They are shown without your name and are no longer linked to your profile in our database. To ask us to remove one, see below.</li>
+        <li><strong>Image files of photos that were not approved</strong> are not deleted automatically with your account. They may stay online at their web addresses until we remove them; email us to have them removed.</li>
+        <li><strong>Copies of suggestions and feedback messages</strong> already sent to our private moderation channel on Telegram.</li>
+        <li><strong>Purchase records</strong> held by Google and RevenueCat under their own terms.</li>
+        <li><strong>Crash, error and analytics data</strong> held by Google (Firebase) and Sentry stays until their retention periods end — Google Analytics events 2 months and user-level data 14 months, Crashlytics reports up to about 90 days according to Google, Sentry reports 30 days on our current plan.</li>
+      </ul>
+      <p><strong>Data held by our service providers.</strong> If you want to request deletion of personal data held by our service providers, contact us at <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>. We will review your request and take the steps required by applicable data protection law.</p>
+      <p><strong>Removing an approved photo or place.</strong> Email <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a> with the place or photo you mean (a link or the place name and city) and why. We review each request individually, taking applicable law into account.</p>
+    </section>
+
+    <section id="coins">
+      <h2><span class="num">05</span> Coins</h2>
+      <p>Coins belong to your account. If you delete your account, any unused coins — including coins you bought — are lost. This doesn't affect any rights you have by law as a consumer.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">06</span> Contact</h2>
+      <p>MandryApp is operated by Serhii Timokhin, an individual registered as a sole proprietor (FOP) in Ukraine. Questions about deleting your account or data — write to <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>. See also our <a href="index.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
+    </section>
+
+    <!-- Спейсер под последние короткие секции — тот же фикс, что и на
+         index.html: без него секциям ближе к концу страницы физически
+         некуда доскроллить по отдельности (см. коммит "Fix Security/
+         Children/Changes/Contact anchors colliding at page bottom" в
+         истории репозитория). -->
+    <div style="height: 45vh;" aria-hidden="true"></div>
+  </main>
+</div>
+
+<footer>
+  MandryApp — a travel companion app. See also the <a href="index.html">Privacy Policy</a> and the <a href="terms.html">Terms of Service</a>.
+</footer>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+    var sections = links
+      .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+      .filter(Boolean);
+
+    function setActive(idx) {
+      links.forEach(function (l) { l.classList.remove('active'); });
+      if (links[idx]) links[idx].classList.add('active');
+    }
+
+    var suppressUntil = 0;
+
+    function updateActive() {
+      if (Date.now() < suppressUntil) return;
+      var scrollPos = window.scrollY + 140;
+      var activeIdx = 0;
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].offsetTop <= scrollPos) activeIdx = i;
+      }
+      setActive(activeIdx);
+    }
+
+    // Клик по пункту меню однозначно говорит, куда идём — подсвечиваем его
+    // сразу, не дожидаясь вычислений по scroll-позиции (те могут не успеть
+    // докрутить секцию строго до нужной границы на некоторых размерах
+    // окна, особенно для коротких последних секций в конце страницы).
+    links.forEach(function (link, idx) {
+      link.addEventListener('click', function () {
+        setActive(idx);
+        suppressUntil = Date.now() + 700;
+      });
+    });
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        updateActive();
+        ticking = false;
+      });
+    }, { passive: true });
+    window.addEventListener('resize', updateActive);
+    updateActive();
+  })();
+</script>
+</body>
+</html>
