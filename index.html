@@ -241,10 +241,11 @@
     <h1>Privacy Policy</h1>
     <p class="lede">What Mandry collects when you plan a trip, why we collect it, and how to see or remove it.</p>
     <div class="meta">
-      <span><b>Effective</b> November 23, 2026</span>
+      <span><b>Effective</b> November 24, 2026</span>
       <span><b>Applies to</b> the Mandry app and account</span>
       <span><b>Contact</b> mandryapps@gmail.com</span>
       <span><a href="terms.html">Terms of Service →</a></span>
+      <span><a href="guidelines.html">Community Guidelines →</a></span>
     </div>
   </div>
 </div>
@@ -264,7 +265,7 @@
 
   <main>
     <div class="callout">
-      <strong>In short:</strong> Mandry stores what you give it — your login, the places you save and suggest, the photos you attach — to run the app and its moderation queue. It does not track your location in the background and runs no ad trackers. Usage analytics (Google Analytics for Firebase) is optional and collected only if you allow it; crash and error reports (Firebase Crashlytics and Sentry) help us keep the app stable. Mandry never sees your card number: purchases go through Google Play's own billing.
+      <strong>In short:</strong> Mandry stores what you give it — your login, the places you save and suggest, the photos you attach — to run the app and its moderation queue. When we review reports and act on content, we keep records of those decisions, as described below. Some of the in-app tools involved reach your app version only through updates. It does not track your location in the background and runs no ad trackers. Usage analytics (Google Analytics for Firebase) is optional and collected only if you allow it; crash and error reports (Firebase Crashlytics and Sentry) help us keep the app stable. Mandry never sees your card number: purchases go through Google Play's own billing.
     </div>
 
     <section id="collect">
@@ -283,8 +284,19 @@
         <li>New places you suggest, including any photos and the Google Maps link you attach</li>
         <li>Photos you contribute to existing places</li>
         <li>Messages you send through the feedback form</li>
+        <li>Reports about other people's content, users you block, and appeals you send (see below)</li>
         <li>Trips you plan — dates, destinations, itineraries, transport, budgets, expenses, savings and checklists. These are private to your account.</li>
       </ul>
+
+      <h3>Rules acceptance</h3>
+      <p>In app versions that show the rules notice on the sign-in screen, when you sign in or create an account and continue, we record your account ID, the rules version you agreed to (the version shown on the Terms and Community Guidelines, currently 2026-11-24), the time, the app version, and that it happened at sign-in. We use this record to show which rules you agreed to and to allow posting only after you have agreed.</p>
+
+      <h3>Reports, blocks and appeals</h3>
+      <p>In-app reporting, blocking, moderation notices and appeals are being added through app updates, and the records below are created only when you use them in an app version that includes them. Reports and appeals you send by email are handled by us manually.</p>
+      <p>If you report content, we store the report: your account ID, the type of content and which item it is, the category and reason you chose, your optional description (up to 1,000 characters), your confirmation that the report is accurate where you gave one, and a minimal copy of the reported item that our server takes as evidence (for the most serious cases only identifiers, not the material itself). We don't copy your email into a report. If you block a user, we store the pair of accounts. If you appeal a decision, we store your explanation (up to 1,000 characters), the appeal's status and our reply.</p>
+
+      <h3>Moderation records about you and your content</h3>
+      <p>When we act on content — yours or content you reported — we record the decision: the type of content, the outcome, whether the basis was our rules or the law, the reason category, any note we showed, our internal notes, who decided and when, and the notices we sent. When we remove or hide content, we also keep a private copy of what was removed, so that a decision can be reviewed or reversed (for example comment text, place details, or the previous nickname or avatar link; for the most serious cases only identifiers). We then move removed photos, images and avatars to private storage that only we can access. This is a separate step: it can take time or be retried, and until it is confirmed (and for copies held in caches or by other people) the file may still be reachable at its former public address. If a decision is cancelled, a file may be moved back.</p>
 
       <h3>Purchases</h3>
       <p>When you buy coins, Google Play Billing (via RevenueCat) tells us which pack you bought and confirms payment — we record that as a coin transaction. We never receive or store your card details; Google and RevenueCat handle the transaction itself, and they may keep their own records of it.</p>
@@ -310,6 +322,8 @@
         <li>Review place and photo suggestions before they go live — see "Who we share it with" below</li>
         <li>Send account emails: sign-in links and password resets</li>
         <li>Reply to feedback you send us</li>
+        <li>Keep Mandry safe: review reports, act on content that breaks our rules or the law, notify you about decisions, handle appeals, and keep records of those decisions</li>
+        <li>Record which version of the rules (2026-11-24) you agreed to, and allow posting only after you have agreed</li>
         <li>If you allow notifications, tell you when a place, photo or feedback message you sent has been reviewed</li>
         <li>Find and fix errors and keep the app stable (crash and error reports)</li>
         <li>If you allow it, understand which screens are used so we can improve them (usage analytics)</li>
@@ -324,12 +338,12 @@
         <table class="datatable">
           <thead><tr><th>Service</th><th>What it handles</th><th>Why</th></tr></thead>
           <tbody>
-            <tr><td class="who">Supabase</td><td>Account data, saved places, photos, all app content</td><td>Our database, authentication, and file storage provider</td></tr>
+            <tr><td class="who">Supabase</td><td>Account data, saved places, photos, all app content, rules acceptance records, reports, blocks, appeals and moderation records</td><td>Our database, authentication, and file storage provider</td></tr>
             <tr><td class="who">Google</td><td>Email and profile, if you sign in with Google; purchase billing</td><td>Sign-in and Google Play payments</td></tr>
             <tr><td class="who">Google (Google Analytics for Firebase, Crashlytics, Cloud Messaging)</td><td>Analytics events and screen names (only if you allow analytics), approximate location from your IP address, device and app details, crash reports, push tokens (only if you allow notifications), app-instance and installation identifiers, your account ID</td><td>Usage insight (only if you allow it), app stability and delivering notifications. For Google Analytics we have accepted Google's data processing terms; in its data-sharing settings we have turned on benchmarking, technical support and account specialists and left sharing with other Google products and services off</td></tr>
             <tr><td class="who">Sentry</td><td>Error reports with technical details and your account ID</td><td>Finding and fixing errors (our Sentry project stores data in the European Union)</td></tr>
             <tr><td class="who">RevenueCat</td><td>Your account ID and which coin pack you bought</td><td>Connects Google Play purchases to your coin balance</td></tr>
-            <tr><td class="who">Telegram</td><td>New place/photo suggestions and feedback messages, with your email and nickname</td><td>Sent to our own private moderation channel only — never made public</td></tr>
+            <tr><td class="who">Telegram</td><td>New place/photo suggestions and feedback messages, with your email and nickname; for reports and appeals, only a short notification with reference numbers and the type or category — not the content, your name or your email</td><td>Sent to our own private moderation channel only — never made public</td></tr>
           </tbody>
         </table>
       </div>
@@ -337,17 +351,20 @@
 
     <section id="retain">
       <h2><span class="num">04</span> How long we keep it</h2>
-      <p>We keep your account data for as long as your account exists. If you delete your account (see below), most of it is removed. Some things are not, and we list them here and under "Your controls".</p>
-      <p><strong>Approved places and photos.</strong> If a place or photo you contributed was approved and published, it stays in Mandry's shared catalog after you delete your account, the way a published wiki edit would. It is shown without your name and is no longer linked to your profile in our database. You can ask us to remove it (see "Your controls").</p>
+      <p>We keep your account data for as long as your account exists. If you delete your account (see below), most of it is removed. Some things are not, and we list them here and under "Your controls". Deleting data from our database does not remove copies held by service providers, caches, or people who saved or shared public content.</p>
+      <p><strong>Approved places and photos.</strong> If a place or photo you contributed was approved and published, it stays in Mandry's shared catalog after you delete your account, the way a published wiki edit would. It is shown without your name and is no longer linked to your profile in our database. This is not anonymization: the photo or text itself may identify you, and a photo's public address contains a random internal identifier of the account that uploaded it. You can ask us to remove it (see "Your controls").</p>
       <p><strong>Photo files and public addresses.</strong> Uploaded photos are stored in Supabase Storage at public web addresses, so anyone who has the address can open the file. The address contains a random internal identifier of the account that uploaded it. When you delete an unapproved photo yourself, the app removes its file. If you delete your account, records of your unapproved photos are deleted, but their image files are not deleted automatically and may stay at their addresses until we remove them. Email us to have them removed.</p>
-      <p><strong>Moderation records.</strong> When we remove an already-published photo, we keep a short internal log of the removal (the reason and a technical fingerprint of the file name, without your personal data).</p>
+      <p><strong>Moderation records.</strong> When we remove an already-published photo, we keep a short internal log of the removal (the reason and a technical fingerprint of the file name, without your personal data). Decisions we make about content, the private copies and files kept for them, and the internal account number a decision concerned are kept after you delete your account, so that decisions can be explained, appealed and reversed; once your account is deleted that number no longer leads to a profile, but these records are not anonymous: they can contain free text, file names and storage paths, private copies and other details that may identify you, and copies may exist outside our systems. We have not set a fixed retention period for these records, and we don't delete moderated files automatically.</p>
+      <p><strong>Rules acceptance record, blocks and notices.</strong> Your rules acceptance record, your block list and the moderation notices addressed to you are kept while your account exists and deleted with it.</p>
+      <p><strong>Reports and appeals.</strong> Reports you send are kept in our records and are not deleted automatically; if you delete your account, the reference to your account is removed from them, but the description you wrote, the copy of the reported item and other details may still identify you or others, so they are not anonymous. Appeals: the text of your appeal is erased when you delete your account; the status, the outcome and our reply stay, with the reference to your account removed.</p>
       <p><strong>Analytics and diagnostics.</strong> Google Analytics events are kept for 2 months and user-level data (including identifiers) for 14 months, renewed while the user stays active (our retention settings). According to information published by Google, Crashlytics reports are kept for a limited period of up to about 90 days; this is the provider's information, not a guarantee from us. Sentry error reports are available to us for 30 days on our current plan. We cannot guarantee when data is physically removed from these providers' systems. This data is not deleted automatically when you delete your account or withdraw your analytics choice; it stays until these periods end. Your analytics choice (allowed or declined) is stored only on your device, separately for each account; it is excluded from Android's automatic backup and is removed when you delete your account in the app or uninstall the app.</p>
     </section>
 
     <section id="control">
       <h2><span class="num">05</span> Your controls</h2>
-      <p>From <strong>Profile → Delete account</strong> inside the app, you can permanently delete your account. That immediately removes your profile (including your avatar image) and your sign-in account (your email and login), saved places, reviews and comments, trip plans, place and photo suggestions that were not approved, feedback history, and coin balance and transaction history — in one step, no support ticket needed. Any unused coins are lost. The app removes your avatar file from storage as part of this; if that step fails, email us and we'll remove it. What stays: approved places and photos (see "How long we keep it"), image files of photos that were not approved until we remove them, copies of suggestions and feedback messages already sent to our private moderation channel on Telegram, purchase records held by Google and RevenueCat, and crash, error and analytics data kept by Google and Sentry for the periods described above.</p>
+      <p>From <strong>Profile → Delete account</strong> inside the app, you can permanently delete your account. That immediately removes your profile (including the link to your avatar) and your sign-in account (your email and login), saved places, reviews and comments, trip plans, place and photo suggestions that were not approved, feedback history, your rules acceptance record, your block list, moderation notices addressed to you and the text of your appeals, and coin balance and transaction history — in one step, no support ticket needed. A comment of yours that has replies is replaced by a “deleted” placeholder without text or author; comments without replies are removed. Any unused coins &mdash; including coins you earned or bought &mdash; are lost. As part of the deletion the app also asks storage to delete your avatar file; if that step fails, or if you delete your account by email, email us and we'll remove the file. If your avatar was earlier removed by moderation, its private copy stays with the moderation records. What stays: approved places and photos (see "How long we keep it"), image files of photos that were not approved until we remove them, copies of suggestions and feedback messages already sent to our private moderation channel on Telegram, reports you made (with the reference to your account removed, but not anonymous), records of moderation decisions about your content with the private copies and files kept for them, the outcome of and our reply to your appeals (without your text), purchase records held by Google and RevenueCat, and crash, error and analytics data kept by Google and Sentry for the periods described above.</p>
       <p><strong>Removal requests.</strong> To ask us to remove an approved photo or place, or a photo file that is still online, email <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a> and tell us which one. We review each request individually, taking applicable law into account.</p>
+      <p><strong>Moderation records.</strong> To ask what we hold about a moderation decision on your content, or to ask us to review a record, email <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>. We review each request individually, taking applicable law into account.</p>
       <p>You can also change your nickname, avatar, language, and theme at any time from the same Profile screen.</p>
       <p><strong>Analytics choice.</strong> Starting with Android version 0.1.27 of Mandry, you can allow or decline analytics, and change your mind, in <strong>Profile → Analytics &amp; privacy</strong>. Withdrawing consent switches analytics off on your device and resets the analytics data stored there. It does not delete events that Google has already received; they stay until the retention periods above end. Earlier versions have no such switch. This choice does not cover crash and error reports. If you have a question about your personal data, including analytics collected earlier, you can email us at the address in the Contact section. If you want to request deletion of personal data held by our service providers, contact us at <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>. We will review your request and take the steps required by applicable data protection law. You can turn notifications off at any time in Android's settings.</p>
       <p><strong>Don't have the app installed, or can't sign in?</strong> Email <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a> from the address on your account and ask us to delete it — see <a href="delete-account.html">Delete your account</a> for the steps. We'll remove the data listed above (subject to the exceptions described there) within 30 days and confirm by email once it's done.</p>
@@ -355,7 +372,7 @@
 
     <section id="security">
       <h2><span class="num">06</span> Security</h2>
-      <p>Your data lives on Supabase's infrastructure with row-level access controls, meaning the app itself only ever asks for your own data, not anyone else's. Passwords are hashed, never stored as plain text, and all traffic between the app and our servers is encrypted.</p>
+      <p>Your data lives on Supabase's infrastructure with row-level access controls. Your private data (account details, saved places, trips, feedback, notices, your blocks and your reports) is limited to your account. Some data is public by design: the shared catalog of places and photos and other users' public content &mdash; comments, reviews, recommendations, nicknames, avatars and approved photos &mdash; can be read by people who use the app, and photo files are at public web addresses. Reports, appeals, moderation records and moderated files are not available to other users. Passwords are hashed, never stored as plain text, and all traffic between the app and our servers is encrypted. Moderated files are moved to a private storage area that only we can access, in a separate step whose limits are described under &ldquo;Moderation records about you and your content&rdquo;.</p>
     </section>
 
     <section id="children">
@@ -373,13 +390,13 @@
       <p>Questions about this policy or your data — write to <a href="mailto:mandryapps@gmail.com">mandryapps@gmail.com</a>.</p>
     </section>
 
-    <!-- Секции Security/Children/Changes/Contact — короткие и идут подряд в
-         самом конце страницы, без этого спейсера им физически не хватает
-         места для скролла, чтобы каждая по очереди доехала до верха экрана
-         (упирались в конец документа раньше) — оттуда и "клик по Security
-         прыгает на Contact", что заметил пользователь: браузер просто не
-         может прокрутить дальше максимума, и все четыре секции утрамбовывались
-         в один и тот же нижний экран. -->
+
+
+    <!-- Спейсер под последние короткие секции — тот же фикс, что и на
+         index.html: без него секциям ближе к концу страницы физически
+         некуда доскроллить по отдельности (см. коммит "Fix Security/
+         Children/Changes/Contact anchors colliding at page bottom" в
+         истории репозитория). -->
     <div style="height: 45vh;" aria-hidden="true"></div>
   </main>
 </div>
